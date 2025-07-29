@@ -1,0 +1,24 @@
+# Xcode project user data
+*.xcuserdatad/
+*.xcscmblueprint
+
+# Workspace user data
+*.xcworkspace/xcuserdata/
+
+# Build artifacts
+DerivedData/
+build/
+
+# macOS system files
+.DS_Store
+
+# SwiftPM
+.build/
+
+# CocoaPods
+Pods/
+
+# Xcode specific folders
+Appetizer.xcodeproj/xcuserdata/
+Appetizer.xcodeproj/project.xcworkspace/xcuserdata/
+Appetizer.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
