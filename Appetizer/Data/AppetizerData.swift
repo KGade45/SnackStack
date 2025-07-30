@@ -23,12 +23,12 @@ struct MockData {
     static let sampleDish = Appetizer(
         description: "A crispy start to any meal.",
         price: 7.49,
-        imageName: "spring-rolls",
+        imageName: "food_placeholder",
         protein: 3,
         calories: 420,
         id: 8,
         carbs: 22,
-        name: "Spring Rolls"
+        name: "Fruit Salad"
     )
     
     static let dishes: [Appetizer] = [
