@@ -11,7 +11,7 @@ class AppetizerListViewModel: ObservableObject {
     @Published var appetizers: [Appetizer] = []
     @Published var alert: AlertItem? = nil
     @Published var isLoading: Bool = false
-    
+
     func fetchAppetizers() {
         appetizers = MockData.dishes
     }
