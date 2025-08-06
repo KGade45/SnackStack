@@ -8,44 +8,47 @@
 import SwiftUI
 
 struct AppetizerDetailView: View {
+    var appetizer: Appetizer
+    @Binding var isshowDetailModal: Bool
     var body: some View {
         ZStack {
             VStack {
-                Image("spring-rolls")
+                Image(appetizer.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(maxWidth: .infinity)
                     .frame(height: 300)
                     .edgesIgnoringSafeArea(.all)
-                Text("Spring Rolls")
+                    .padding(.top, -20)
+                Text(appetizer.name)
                     .font(.title2)
                     .fontWeight(.medium)
                     .padding()
-                Text("A crispy start to any meal.")
+                Text(appetizer.description)
                     .foregroundColor(.secondary)
                     .fontWeight(.semibold)
                     .font(.system(size: 18))
-                    .padding()
+                    .multilineTextAlignment(.center)
                 HStack(spacing: 35) {
                     VStack() {
                         Text("Calories")
                             .foregroundColor(.secondary)
                             .fontWeight(.semibold)
-                        Text("$12.99")
+                        Text("\(appetizer.calories)")
                             .foregroundColor(.secondary)
                     }
                     VStack() {
                         Text("Carbs")
                             .foregroundColor(.secondary)
                             .fontWeight(.semibold)
-                        Text("$12.99")
+                        Text("\(appetizer.carbs)")
                             .foregroundColor(.secondary)
                     }
                     VStack() {
                         Text("Protein")
                             .foregroundColor(.secondary)
                             .fontWeight(.semibold)
-                        Text("$12.99")
+                        Text("\(appetizer.protein)")
                             .foregroundColor(.secondary)
                     }
                 }
@@ -53,7 +56,7 @@ struct AppetizerDetailView: View {
                 Button {
                     
                 } label: {
-                    Text("Add to Cart")
+                    Text("\(appetizer.price, specifier: "%.2f") - Add to Cart")
                         .fontWeight(.medium)
                         .padding()
                         .foregroundColor(.white)
@@ -63,11 +66,28 @@ struct AppetizerDetailView: View {
                 }
                 .padding(.top, 50)
             }
+            .frame(width: 320, height: 650)
+            .background(Color(.systemBackground))
+            .cornerRadius(12)
+            .shadow(radius: 40)
+            .overlay(Button {
+                isshowDetailModal = false
+            } label: {
+                ZStack{
+                    Circle()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.white)
+                        .opacity(0.6)
+                    
+                    Image(systemName: "xmark")
+                        .imageScale(.small)
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(.black)
+                }
+            },
+                     
+                     alignment: .topTrailing)
         }
-        .frame(maxHeight: .infinity, alignment: .top)
     }
 }
 
-#Preview {
-    AppetizerDetailView()
-}

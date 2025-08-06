@@ -38,4 +38,28 @@ struct AlertContext {
         message: Text("Unable to complete your request at this time. Please check your internet connection."),
         dismissButton: .default(Text("OK"))
     )
+
+    static let invalidForm = AlertItem(
+        title: Text("Invalid Form"),
+        message: Text("Please ensure all fields in the form have been filled out."),
+        dismissButton: .default(Text("OK"))
+    )
+
+    static let invalidEmail = AlertItem(
+        title: Text("Invalid Email"),
+        message: Text("Please ensure your email is correct."),
+        dismissButton: .default(Text("OK"))
+    )
+
+    static let userSaveSuccess = AlertItem(
+        title: Text("Profile saved"),
+        message: Text("Successfully saved your profile information."),
+        dismissButton: .default(Text("OK"))
+    )
+
+    static let invalidUserData = AlertItem(
+        title: Text("Profile Error"),
+        message: Text("Error saving/retrieving your profile information."),
+        dismissButton: .default(Text("OK"))
+    )
 }
